@@ -1,0 +1,12 @@
+{% set animals = {
+    cat: '🐈',
+    dog: '🐕',
+    seal: '🦭',
+    squid: '🦑'
+} %}
+{% macro presentation(name, animal) %}
+    <article class="card-presentation">
+        <h2>{{name}}</h2>
+        <i>My spiritanimal is {{animals[animal]}}</i>
+    </article>
+{% endmacro %}

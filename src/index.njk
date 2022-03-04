@@ -1,0 +1,9 @@
+---
+layout: layouts/base
+titel: home
+---
+{% import './_includes/macros/cards.njk' as cards %}
+
+{% for author in authors %}
+    {{cards.presentation(author.name,author.animal)}}
+{% endfor %}

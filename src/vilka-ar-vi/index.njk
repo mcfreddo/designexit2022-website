@@ -1,0 +1,13 @@
+---
+layout: layouts/base
+titel: students
+---
+<h1>Vilka är vi?</h1>
+<ul>
+    {% for studentPage in collections.students %}
+        {% set student = studentPage.data.student %}
+        <li>
+            <a href="{{studentPage.url}}">{{student.name}}</a>
+        </li>
+    {% endfor %}
+</ul>

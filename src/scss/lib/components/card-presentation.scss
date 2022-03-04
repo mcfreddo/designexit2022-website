@@ -1,0 +1,11 @@
+.card {
+  &-presentation {
+    border-radius: 0.25em;
+    padding: 1em;
+    width: max-content;
+    box-shadow: 0.125em 0.125em 0.25em hsl(0 0% 0% / 0.125);
+    h2 {
+      margin-bottom: 1em;
+    }
+  }
+}
