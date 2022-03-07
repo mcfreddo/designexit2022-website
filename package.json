@@ -3,17 +3,21 @@
   "scripts": {
     "dev:eleventy": "npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
-    "dev:parcel:css": "parcel watch src/scss/*.scss --dist-dir _site/css",
     "dev:parcel:js": "parcel watch src/js/*.js --dist-dir _site/js",
     "build:parcel:js": "parcel build src/js/*.js --dist-dir _site/js",
-    "build:parcel:css": "parcel build src/scss/*.scss --dist-dir _site/css",
+    "dev:tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
+    "build:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./_site/css/style.css --watch",
     "dev": "concurrently npm:dev:*",
     "build": "npm run build:parcel && npm run build:eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@parcel/transformer-sass": "^2.3.2",
+    "parcel": "^2.3.2",
+    "autoprefixer": "^10.4.2",
     "concurrently": "^7.0.0",
-    "parcel": "^2.3.2"
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
+    "tailwindcss": "^3.0.22"
   }
 }
