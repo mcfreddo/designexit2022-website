@@ -1,21 +1,31 @@
+{# Base HTML, compatible with what Vite expects #}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
-        <title>{{titel}}</title>
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/main.js" defer></script>
+        <title>{{title or metadata.title}}</title>
+        {% if build.env == "production" %}
+            {% viteLinkStylesheetTags "src/client/main.js" %}
+            {% viteLinkModulePreloadTags "src/client/main.js" %}
+        {% endif %}
     </head>
-    <body >
+
+    <body w:h="full" w:flex="~ col" >
+
         {% include "partials/header.njk" %}
-        <div data-page="{{page.fileSlug}}">
-            <main >
-                {{content | safe}}
-            </main>
-            {% include "partials/footer.njk" %}
-        </div>
+
+        {% include "partials/main.njk" %}
+
+        {# {% include "partials/footer.njk" %} #}
+
+        {% if build.env == "production" %}
+            {% viteScriptTag "src/client/main.js" %}
+        {% else %}
+            <script type="module" src="http://localhost:3000/@vite/client"></script>
+            <script type="module" src="http://localhost:3000/src/client/main.js"></script>
+        {% endif %}
     </body>
+
 </html>

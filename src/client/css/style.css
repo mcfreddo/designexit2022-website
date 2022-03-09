@@ -1,0 +1,6 @@
+@import "composition/flow";
+@import "composition/fluid";
+
+body {
+  @apply p-2xs;
+}

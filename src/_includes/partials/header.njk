@@ -1,9 +1,19 @@
-<header>
-    <nav id="site-nav">
-        <ul>
-            {% for navpage in nav %}
-                <a href="{{navpage.url}}">{{navpage.titel}}</a>
-            {% endfor %}
-        </ul>
+<header w:flex="~" w:bg="red-50">
+    <div class="logo">LOGO</div>
+    <nav w:m="l-auto">
+        <ol  w:flex="~" w:grid="gap-2" >
+            <li>
+                <a href="">home</a>
+            </li>
+            <li>
+                <a href="">Vad är Designexit</a>
+            </li>
+            <li>
+                <a href="">Vilka är vi</a>
+            </li>
+            <li>
+                <a href="">Vernisage</a>
+            </li>
+        </ol>
     </nav>
 </header>
