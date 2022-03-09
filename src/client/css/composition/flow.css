@@ -4,14 +4,13 @@
   }
   &.cramp {
     > * {
-      @apply p-sm;
     }
   }
   &.grow {
     > * {
       flex-shrink: 0;
       flex-basis: 100%;
-      @apply bg-light-blue-300;
+      @apply p-sm;
     }
   }
   &.mandatory {

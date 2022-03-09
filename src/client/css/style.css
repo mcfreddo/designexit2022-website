@@ -2,5 +2,6 @@
 @import "composition/fluid";
 
 body {
+  font-family: forma-djr-text, sans-serif;
   @apply p-2xs;
 }
