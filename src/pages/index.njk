@@ -3,12 +3,3 @@ layout: layouts/base
 permalink: index.html
 titel: home
 ---
-{% import 'macros/cards.njk' as cards %}
-
-<ul class="flex flex-col gap-2">
-    {% for author in authors %}
-        <li>
-            {{cards.presentation(author.name,author.animal)}}
-        </li>
-    {% endfor %}
-</ul>

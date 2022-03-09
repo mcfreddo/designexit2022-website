@@ -1,7 +1,10 @@
 module.exports = {
   content: ["_site/**/*.html"],
   theme: {
-    extend: {},
+    spacing: {
+      sm: "3rem",
+      md: "5rem",
+    },
   },
   plugins: [],
 };

@@ -9,10 +9,12 @@
         <link rel="stylesheet" href="/css/style.css">
         <script src="/js/main.js" defer></script>
     </head>
-    <body class="h-screen flex flex-col">
+    <body >
         {% include "partials/header.njk" %}
-        <div class="h-full grow bg-yellow-500" data-page="{{page.fileSlug}}">
-            <main class="h-full flex flex-col items-center justify-center">{{content | safe}}</main>
+        <div data-page="{{page.fileSlug}}">
+            <main >
+                {{content | safe}}
+            </main>
             {% include "partials/footer.njk" %}
         </div>
     </body>
